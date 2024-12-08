@@ -92,7 +92,7 @@ body {
 .como_jugar{
     grid-area: historia;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     
     font-family: monospace;
 
