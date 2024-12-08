@@ -1,0 +1,254 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+/* Animación cuando carga la página */
+
+.producto {
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Animación en producto */
+.producto:hover {
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.padre {
+  display: grid;
+  grid-template-areas:
+    "barra barra"
+    "seccion_principal seccion_principal"
+    "producto producto"
+    "footer footer";
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  font-family: monospace;
+}
+.barra {
+  grid-area: barra;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  justify-content: space-between;
+  max-width: 100%;
+}
+.barra img{
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+.barra:hover .menu {
+  display: block; 
+}
+.menu {
+  display: none;
+  grid-area: menu;
+  color: white;
+
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.barra i {
+  display: flex;
+
+  font-size: 2rem;
+  color: white;
+  margin-right: 5%;
+}
+
+.barra h1 {
+  font-size: 2rem;
+  color: white;
+  margin-left: 5%;
+}
+
+.seccion_principal {
+  grid-area: seccion_principal;
+  background-color: white;
+  margin-top: 5%;
+}
+
+.producto {
+  grid-area: producto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+  padding: 1%;
+
+
+
+  
+}
+
+
+
+
+.producto img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+.producto h2{
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+}
+
+.footer i{
+  color: white;
+}
+
+button {
+  border-radius: 5px !important;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+
+/* Versión Desktop */
+@media (min-width: 576px) {
+  .padre {
+    grid-template-areas:
+      
+      "barra seccion_principal"
+      "barra seccion_principal"
+      "barra producto"
+      "footer footer";
+
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .barra {
+    display: flex;
+    height: 100%;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    grid-area: barra;
+  }
+
+  
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+    grid-area: menu;
+
+
+}
+
+.menu a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-family:monospace;
+  
+}
+
+  .barra i {
+    display: none;
+    
+  }
+
+  .barra a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+
+  }
+
+  .barra h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .seccion_principal{
+    grid-area: seccion_principal;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+
+    
+    
+  }
+
+  .producto{
+    grid-area: producto;
+    display: flex;
+    width: calc(20%);
+    
+  }
+
+  .footer{
+    grid-area:footer ;
+    gap: 30px;
+      color: white;
+    }
+
+    footer p:hover {
+      transform: scale(1.1);
+      color: #fff;
+    }
+  }
+  
